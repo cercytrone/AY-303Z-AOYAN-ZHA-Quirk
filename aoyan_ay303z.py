@@ -1,4 +1,3 @@
-  GNU nano 9.3                                                                                                     /config/custom_zha_quirks/aoyan_ay303z.py                                                                                                                
 import zigpy.types as t
 from zigpy.quirks.v2 import EntityType
 from zigpy.quirks.v2.homeassistant import PERCENTAGE, UnitOfTemperature, UnitOfTime
@@ -63,6 +62,33 @@ class TemperatureUnit(t.enum8):
         step=1,
         unit=PERCENTAGE,
         entity_type=EntityType.CONFIG,
-                                                                                                                             [ Read 94 lines ]
-
- *1  [nano]                                                                                                                                                                                                                                                  Sat 11-14 12:47
+        translation_key="soil_warning_threshold",
+        fallback_name="Schwellwert Trockenheitswarnung",
+    )
+    .tuya_number(
+        dp_id=111,
+        attribute_name="temperature_sampling",
+        type=t.uint32_t,
+        min_value=5,
+        max_value=3600,
+        step=1,
+        unit=UnitOfTime.SECONDS,
+        entity_type=EntityType.CONFIG,
+        translation_key="temperature_sampling",
+        fallback_name="Messintervall Temperatur",
+    )
+    .tuya_number(
+        dp_id=112,
+        attribute_name="soil_sampling",
+        type=t.uint32_t,
+        min_value=5,
+        max_value=3600,
+        step=1,
+        unit=UnitOfTime.SECONDS,
+        entity_type=EntityType.CONFIG,
+        translation_key="soil_sampling",
+        fallback_name="Messintervall Bodenfeuchte",
+    )
+    .skip_configuration()
+    .add_to_registry()
+)
