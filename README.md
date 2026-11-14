@@ -7,10 +7,10 @@ Wenn ein Gerät nicht korrekt erkannt wird und du einen angepassten Quirk nutzt 
 yaml
 
 zha:
-  custom_quirks_path: /config/zha_quirks'
+  custom_quirks_path: /config/custom_zha_quirks'
 ```  
 
-3. Datei hochladen: Lade die entsprechende Python-Quirk-Datei (z. B. via File Editor oder Studio Code Server) in diesen Ordner.
+3. Datei hochladen: Lade die entsprechende Python-Quirk-Datei (z. B. via File Editor oder Studio Code Server) in diesen Ordner, oder via Terminal "nano /config/custom_zha_quirks/aoyan_ay303z.py"
 4. Neustart & Neu koppeln:
 	• Starte Home Assistant vollständig neu.
 	• Lösche das betreffende Zigbee-Gerät in ZHA und kopple es danach neu, damit der Quirk beim Einlesen der Signatur greift.
